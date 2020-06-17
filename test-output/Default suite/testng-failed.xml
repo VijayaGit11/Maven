@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.RetryLogic">
+      <class name="com.qa.testcases.SoftAssertion">
         <methods>
+          <include name="softAssert"/>
           <include name="tearDown"/>
-          <include name="getYahooTitle"/>
-          <include name="launchyahoo"/>
         </methods>
-      </class> <!-- com.qa.testcases.RetryLogic -->
+      </class> <!-- com.qa.testcases.SoftAssertion -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,11 +1,15 @@
 package com.qa.base;
 
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.pagefactory.ByAll;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -35,6 +39,24 @@ public class Base {
 	//driver.get(prop.getProperty("internetUrl"));
 	}
 	
+	public static void clickOnHiddenElement(By by) {
+	List<WebElement> loginButtons = driver.findElements(by);
+    for(int i=0; i<loginButtons.size(); i++) {
+    	if(loginButtons.get(i).getLocation().getX()!=0) {
+    		loginButtons.get(i).click();
+    		break;
+    		}
+    	}
+	} 
+    
+    public static void clickElement(By by) {
+    	driver.findElement(by).click();
+    }
+    
+    public static void sendStringKeys(By by, String string) {
+    	driver.findElement(by).sendKeys(string);
+    }
+    
 	
 	public static void closeBrowser() {
 	driver.quit();

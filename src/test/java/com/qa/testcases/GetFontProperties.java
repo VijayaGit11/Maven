@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.qa.base.Base;
-import com.qa.testUtil.TakeScreenshots;
+import com.qa.testUtil.TestUtils;
 
 public class GetFontProperties extends Base{
 	
@@ -20,7 +20,7 @@ public class GetFontProperties extends Base{
 		WebElement ele = driver.findElement(By.id("From_today's_featured_article"));
 		System.out.println("text is: " + ele.getText());
 		
-		TakeScreenshots.takeScreenshot();
+		TestUtils.takeScreenshot(null);
 		
 		System.out.println("Font Colour is: " + ele.getCssValue("color"));
 		System.out.println("Font size is: " + ele.getCssValue("font-size"));

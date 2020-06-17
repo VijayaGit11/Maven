@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="com.qa.testUtil.RetryTransformer"/>
-  </listeners>
-  <test thread-count="5" name="RetryFailedTestCase(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.RetryLogic">
+      <class name="com.qa.testcases.SoftAssertion">
         <methods>
+          <include name="softAssert"/>
           <include name="tearDown"/>
-          <include name="getYahooTitle"/>
-          <include name="launchyahoo"/>
         </methods>
-      </class> <!-- com.qa.testcases.RetryLogic -->
+      </class> <!-- com.qa.testcases.SoftAssertion -->
     </classes>
-  </test> <!-- RetryFailedTestCase(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

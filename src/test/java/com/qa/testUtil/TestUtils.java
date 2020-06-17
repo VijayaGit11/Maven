@@ -1,15 +1,22 @@
 package com.qa.testUtil;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 import com.qa.base.Base;
+
+import bsh.classpath.BshClassPath.GeneratedClassSource;
 
 public class TestUtils extends Base implements IRetryAnalyzer {
 	
@@ -44,6 +51,16 @@ public class TestUtils extends Base implements IRetryAnalyzer {
 		driver.switchTo().window(parentWindow);
 		driver.close();
 	}
+	
+	public static void takeScreenshot(String testMethodName) throws IOException {
+		
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File srcFile =  ts.getScreenshotAs(OutputType.FILE);
+//		String path = (System.getProperty("user.dir")+ "/Screenshots/" + TestUtils.formatDate() + ".png");
+//		String path = (System.getProperty("user.dir")+ "/Screenshots/" +this.getClass().getName() + "_" + TestUtils.formatDate() + ".png");
+		String path = (System.getProperty("user.dir")+ "/Screenshots/" + testMethodName + "_" + TestUtils.formatDate() + ".png");
+		FileUtils.copyFile(srcFile, new File(path));
+		}
 	
 
 	public boolean retry(ITestResult result) {

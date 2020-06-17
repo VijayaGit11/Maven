@@ -59,6 +59,14 @@
   </build>
 
 <dependencies>
+
+	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13</version>
+    <scope>test</scope>
+	</dependency>
+
     
     <dependency>
     <groupId>io.github.bonigarcia</groupId>
@@ -90,6 +98,51 @@
 	    <artifactId>poi-ooxml</artifactId>
 	    <version>4.1.2</version>
 	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>6.1.1</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-jvm</artifactId>
+    <version>6.1.1</version>
+    <type>pom</type>
+	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>6.1.1</version>
+    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-jvm-deps</artifactId>
+    <version>1.0.6</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>5.3.0</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-gherkin</artifactId>
+    <version>6.1.1</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>6.1.1</version>
+	</dependency>
+	
   
   </dependencies>
   
